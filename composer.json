@@ -24,10 +24,9 @@
     }
   },
   "require": {
-    "php": ">=8.2",
-    "ext-yaml": "*",
-    "imhotep/components": ">=1.0",
-    "imhotep/process": ">=1.0"
+    "php": "^8.2",
+    "imhotep/components": "^1.0",
+    "imhotep/process": "^1.0"
   },
   "minimum-stability": "dev"
 }
