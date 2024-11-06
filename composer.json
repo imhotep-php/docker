@@ -1,0 +1,33 @@
+{
+  "name": "imhotep/docker",
+  "type": "library",
+  "description": "Docker files for running a basic Imhotep application.",
+  "keywords": ["php", "docker"],
+  "license" : "MIT",
+  "homepage": "https://imhotep.dev",
+  "authors": [
+    {
+      "name": "Imhotep",
+      "email": "imhotep.php@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Imhotep\\Docker\\": "/src"
+    }
+  },
+  "extra": {
+    "imhotep": {
+      "providers": [
+        "Imhotep\\Docker\\DockerServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": ">=8.2",
+    "ext-yaml": "*",
+    "imhotep/components": ">=1.0",
+    "imhotep/process": ">=1.0"
+  },
+  "minimum-stability": "dev"
+}

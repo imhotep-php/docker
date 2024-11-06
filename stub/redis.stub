@@ -1,0 +1,15 @@
+redis:
+    image: 'redis:alpine'
+    restart: unless-stopped
+    tty: true
+    ports:
+      - '6379:6379'
+    volumes:
+      - './docker/redis/data:/data'
+    command: ["redis-server", "--bind", "redis", "--port", "6379"]
+    networks:
+      - imhotep-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      retries: 3
+      timeout: 5s
