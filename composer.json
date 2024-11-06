@@ -23,6 +23,7 @@
       ]
     }
   },
+  "bin": ["bin/docker"],
   "require": {
     "php": "^8.2",
     "imhotep/components": "^1.0",
