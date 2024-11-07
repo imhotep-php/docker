@@ -27,7 +27,8 @@
   "require": {
     "php": "^8.2",
     "imhotep/components": "^1.0",
-    "imhotep/process": "^1.0"
+    "imhotep/process": "^1.0",
+    "symfony/yaml": "^6.0|^7.0"
   },
   "minimum-stability": "dev"
 }
