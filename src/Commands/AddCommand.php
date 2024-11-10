@@ -32,7 +32,7 @@ class AddCommand extends Command
         $this->prepareInstallation($services);
 
         $this->output->writeln('');
-        $this->components->info('Additional services installed successfully.');
+        $this->components()->info('Additional services installed successfully.');
     }
 
     public function getOptions(): array

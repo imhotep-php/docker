@@ -44,6 +44,10 @@ trait InteractsWithDocker
     
     protected function updateEnvVariables(array $services): void
     {
+        if (! file_exists(base_path('.env'))) {
+            return;
+        }
+
         $this->environment = file_get_contents(base_path('.env'));
         
         if ((bool)array_intersect($this->services, $services)) {

@@ -32,34 +32,34 @@ function display_help {
     echo "Imhotep Docker"
     echo
     echo "${YELLOW}Usage:${NC}" >&2
-    echo "  idock COMMAND [options] [arguments]"
+    echo "  ./vendor/bin/docker COMMAND [options] [arguments]"
     echo
     echo "Unknown commands are passed to the docker-compose binary."
     echo
     echo "${YELLOW}Docker Compose Commands:${NC}"
-    echo "  ${GREEN}idock up${NC}             Start the application"
-    echo "  ${GREEN}idock up -d${NC}          Start the application in the background"
-    echo "  ${GREEN}idock stop${NC}           Stop the application"
-    echo "  ${GREEN}idock restart${NC}        Restart the application"
-    echo "  ${GREEN}idock ps${NC}             Display the status of all containers"
+    echo "  ${GREEN}./vendor/bin/docker up${NC}             Start the application"
+    echo "  ${GREEN}./vendor/bin/docker up -d${NC}          Start the application in the background"
+    echo "  ${GREEN}./vendor/bin/docker stop${NC}           Stop the application"
+    echo "  ${GREEN}./vendor/bin/docker restart${NC}        Restart the application"
+    echo "  ${GREEN}./vendor/bin/docker ps${NC}             Display the status of all containers"
     echo
     echo "${YELLOW}Imhotep Commands:${NC}"
-    echo "  ${GREEN}idock imhotep ...${NC}    Run an Imhotep command"
-    echo "  ${GREEN}idock imhotep list${NC}"
+    echo "  ${GREEN}./vendor/bin/docker imhotep ...${NC}    Run an Imhotep command"
+    echo "  ${GREEN}./vendor/bin/docker imhotep list${NC}"
     echo
     echo "${YELLOW}Composer Commands:${NC}"
-    echo "  ${GREEN}idock composer ...${NC}   Run a Composer command"
-    echo "  ${GREEN}idock composer --version${NC}"
+    echo "  ${GREEN}./vendor/bin/docker composer ...${NC}   Run a Composer command"
+    echo "  ${GREEN}./vendor/bin/docker composer --version${NC}"
     echo
     echo "${YELLOW}PHP Commands:${NC}"
-    echo "  ${GREEN}idock php ...${NC}        Run a snippet of PHP code"
-    echo "  ${GREEN}idock php -v${NC}"
+    echo "  ${GREEN}./vendor/bin/docker php ...${NC}        Run a snippet of PHP code"
+    echo "  ${GREEN}./vendor/bin/docker php -v${NC}"
     echo
     echo "${YELLOW}Binaries:${NC}"
-    echo "  ${GREEN}idock bin ...${NC}        Run Composer binary scripts from the vendor/bin directory"
+    echo "  ${GREEN}./vendor/bin/docker bin ...${NC}        Run Composer binary scripts from the vendor/bin directory"
     echo ""
     echo "${YELLOW}Others:${NC}"
-    echo "  ${GREEN}idock open${NC}           Open the site in your browser"
+    echo "  ${GREEN}./vendor/bin/docker open${NC}           Open the site in your browser"
     echo ""
 
     exit 1
@@ -107,7 +107,7 @@ function check_exec() {
 function app_is_not_running {
     echo "${BOLD}Imhotep Docker is not running.${NC}" >&2
     echo "" >&2
-    echo "${BOLD}You may using the following commands:${NC} './imhodock up' or './imhodock up -d'" >&2
+    echo "${BOLD}You may using the following commands:${NC} './vendor/bin/docker up' or './vendor/bin/docker up -d'" >&2
 
     exit 1
 }
