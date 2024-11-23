@@ -21,6 +21,7 @@ class InstallCommand extends Command
 
         if ($this->input->hasOption('with')) {
             $services = explode(',', $this->input->getOption('with'));
+            $services = array_filter($services);
         }
 
         if ($invalidServices = array_diff($services, $this->services)) {
