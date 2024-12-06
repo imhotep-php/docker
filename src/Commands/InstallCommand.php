@@ -15,7 +15,7 @@ class InstallCommand extends Command
 
     public static string $defaultDescription = 'Install Docker Compose file';
 
-    public function handle(): void
+    public function handle(): int
     {
         $services = $this->defaultServices;
 
@@ -27,7 +27,7 @@ class InstallCommand extends Command
         if ($invalidServices = array_diff($services, $this->services)) {
             $this->components()->error('Invalid services ['.implode(', ', $invalidServices).']');
 
-            return;
+            return 0;
         }
 
         $this->buildComposeFile($services);
@@ -45,6 +45,8 @@ class InstallCommand extends Command
         }
 
         $this->output->writeln('');
+
+        return 0;
     }
 
     public function getOptions(): array

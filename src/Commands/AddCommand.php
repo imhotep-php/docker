@@ -13,7 +13,7 @@ class AddCommand extends Command
 
     public static string $defaultDescription = 'Add a service to an existing installation';
 
-    public function handle(): void
+    public function handle(): int
     {
         $services = $this->defaultServices;
 
@@ -24,7 +24,7 @@ class AddCommand extends Command
         if ($invalidServices = array_diff($services, $this->services)) {
             $this->components()->error('Invalid services ['.implode(', ', $invalidServices).']');
 
-            return;
+            return 0;
         }
 
         $this->buildComposeFile($services);
@@ -33,6 +33,8 @@ class AddCommand extends Command
 
         $this->output->writeln('');
         $this->components()->info('Additional services installed successfully.');
+
+        return 0;
     }
 
     public function getOptions(): array

@@ -20,7 +20,7 @@ class PublishCommand extends Command
         $this->files = $files;
     }
 
-    public function handle(): void
+    public function handle(): int
     {
         $this->copyDirectory(__DIR__.'/../../runtimes', base_path('docker'));
 
@@ -33,6 +33,8 @@ class PublishCommand extends Command
                 file_get_contents($composePath)
             )
         );
+
+        return 0;
     }
 
     protected function copyDirectory(string $from, string $to): void
